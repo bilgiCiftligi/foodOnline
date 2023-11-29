@@ -85,6 +85,8 @@ class User(AbstractBaseUser):
         return user_role
 
 
+
+
 class UserProfile(models.Model):
     user = OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     profile_picture = models.ImageField(upload_to='users/profile_pictures', blank=True, null=True)
@@ -108,7 +110,7 @@ class UserProfile(models.Model):
 
     def save(self, *args, **kwargs):
         if self.latitude and self.longitude:
-            self.location = Point(float(self.longitude), float(self.latitude))
+         #  self.location = Point(float(self.longitude), float(self.latitude))
             return super(UserProfile, self).save(*args, **kwargs)
         return super(UserProfile, self).save(*args, **kwargs)
 
