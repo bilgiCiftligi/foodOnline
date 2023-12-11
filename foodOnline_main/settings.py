@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['foodonline-env.eba-i88gz6m9.us-west-2.elasticbeanstalk.com/','127.0.0.1']
 
 
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
+        'PASSWORD': 'mixl vlkg epug uakr',
         'HOST': config('DB_HOST'),
     }
 }
