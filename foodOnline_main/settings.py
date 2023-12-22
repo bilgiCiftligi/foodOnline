@@ -100,7 +100,7 @@ else:
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
-        'PASSWORD': 'mixl vlkg epug uakr',
+        'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
     }
     }
@@ -163,9 +163,12 @@ MESSAGE_TAGS = {
 }
 
 # Email configuration
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', cast=int)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = 'mixl vlkg epug uakr'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'EMAIL_HOST_USER'
+EMAIL_HOST_PASSWORD = 'EMAIL_HOST_PASSWORD'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'foodOnline Marketplace <ctailor@gmail.com>'
+EMAIL_USE_SSL = False
+
+# DEFAULT_FROM_EMAIL = 'ctailor@gmail.com'
